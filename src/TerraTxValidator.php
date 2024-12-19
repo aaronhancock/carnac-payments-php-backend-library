@@ -16,10 +16,10 @@ use RuntimeException;
  */
 class TerraTxValidator
 {
-    const VERSION = '1.0.1';
+    const VERSION = '0.0.1';
 
     private $merchantAddress = '';
-    private $networkName = 'mainnet'; // testnet, mainnet, classic, localterra
+    private $networkName = 'classic'; // testnet, mainnet, classic, localterra
     private $FCDUrl = null;
     private $LCDUrl = null;
     private $chainId = null;
@@ -141,7 +141,7 @@ class TerraTxValidator
     public function setConfig($config = [])
     {
         $this->merchantAddress = Arr::get($config, 'merchantAddress');
-        $this->networkName = Arr::get($config, 'networkName', 'mainnet');
+        $this->networkName = Arr::get($config, 'networkName', 'classic');
         $this->chainId = Arr::get($config, 'chainId');
         $this->FCDUrl = Arr::get($config, 'FCD');
         $this->LCDUrl = Arr::get($config, 'LCD');
